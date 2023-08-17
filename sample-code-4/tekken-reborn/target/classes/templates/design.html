@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Item</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+  <h2>Add Item</h2>
+  <form action="#" th:action="@{/items}" th:object="${item}" method="post">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" class="form-control" th:field="*{name}">
+    </div>
+    <div class="form-group">
+      <label for="brand">Brand:</label>
+      <select id="brand" class="form-control" th:field="*{brand}">
+        <option value="Balenciaga">Balenciaga</option>
+        <option value="Stone Island">Stone Island</option>
+        <option value="Dior">Dior</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="yearOfCreation">Year of Creation:</label>
+      <input type="number" id="yearOfCreation" class="form-control" th:field="*{yearOfCreation}">
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" id="price" class="form-control" th:field="*{price}">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+  </form>
+</div>
+</body>
+</html>
