@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Clothes Management</title>
+</head>
+<body>
+<h1>Clothes Management</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="clothes : ${clothes}">
+    <td th:text="${clothes.id}"></td>
+    <td th:text="${clothes.name}"></td>
+    <td th:text="${clothes.description}"></td>
+    <td>
+      <a th:href="@{/deleteClothes/{id}(id=${clothes.id})}" class="btn btn-danger">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<a href="/addItem" class="btn btn-primary">Add Item</a>
+</body>
+</html>
