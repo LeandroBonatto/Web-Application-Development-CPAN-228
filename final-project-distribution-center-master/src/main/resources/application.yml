@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    postgres-qa:
+        username: qa
+        password: 123
+        host: localhost
+        port: 5432
+        db-name: qa
+        jdbc-url: jdbc:postgresql://localhost:5432/postgres
+server:
+  port: 8081
